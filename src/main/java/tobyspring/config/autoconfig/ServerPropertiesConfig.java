@@ -9,10 +9,6 @@ import tobyspring.config.MyAutoConfiguration;
 public class ServerPropertiesConfig {
     @Bean
     public ServerProperties serverProperties(Environment environment){
-//        ServerProperties properties = new ServerProperties();
-//        properties.setContextPath(environment.getProperty("contextPath"));
-//        properties.setPort(Integer.parseInt(environment.getProperty("port")));
-
         return Binder.get(environment).bind("", ServerProperties.class).get();
     }
 }
